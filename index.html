@@ -48,14 +48,14 @@ body {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.10.6/vue.min.js" async></script>
 </head>
 <body>
-<div><h1 class='title'>> Hello_World.js<span class='dash'>_</span></h1></div>
-<div><h1 class='title-timer'>><span class='timer'> _</span></h1></div>
+<div><h1 class='title'>> SMS_142T.js</h1></div>
+<div><h1 class='title-timer'>><span class='dash'> _</span><span class='timer'></span></h1></div>
 <div id="illustrator" class='backboard'>Illustration by 荻pote <a href='http://pixiv.net/i/33384377'>http://www.pixiv.net/member_illust.php?id=33384377</a></div>
-<script src='timer.js'>
+<script>
 var FreeDay = +new Date("Sep 28, 2015"),
-    ZeroDay = +new Date("Oct 30, 2014")
+    ZeroDay = +new Date("Oct 30, 2014"),
     $timer = $('.timer'),
-    dash = {
+    time = {
         looping: 0,
         effect : function() { 
             if (Date.now() >= ZeroDay) {
@@ -70,10 +70,26 @@ var FreeDay = +new Date("Sep 28, 2015"),
             this.looping = setInterval( this.effect , 1000);
         },
         stop: function() {
-            dashEl.stop(1,1); clearInterval(this.looping);
+            $timer.stop(1,1); clearInterval(this.looping);
         }
     };
+	time.loop();
+
+var $dashEl = $('.dash'),
+    dash = {
+        looping: 0,
+        effect : function() { 
+            $dashEl.fadeIn().fadeOut();
+        },
+        loop: function() {
+            this.looping = setInterval( this.effect , 500);
+        },
+        stop: function() {
+            $dashEl.stop(1,1); clearInterval(this.looping);
+        }
+	};
 dash.loop();
 </script>
+
 </body>
 </html>
