@@ -61,8 +61,8 @@ var FreeDay = +new Date("Sep 28, 2015"),
             if (Date.now() >= ZeroDay) {
                 var diffSec = Math.round( (FreeDay - (+new Date)) / 1000 ),
                     passSec = Math.round( (ZeroDay + (+new Date - ZeroDay)) / 1000 ),
-                    final = (FreeDay / 1000) - passSec
-                    console.log(diffSec)
+                    final = (FreeDay / 1000) - passSec;
+                    console.log(diffSec);
                     $timer.html(' ' + diffSec);
             }
         },
@@ -70,7 +70,8 @@ var FreeDay = +new Date("Sep 28, 2015"),
             this.looping = setInterval( this.effect , 1000);
         },
         stop: function() {
-            $timer.stop(1,1); clearInterval(this.looping);
+            $timer.stop(1,1);
+            clearInterval(this.looping);
         }
     };
 	time.loop();
@@ -85,9 +86,10 @@ var $dashEl = $('.dash'),
             this.looping = setInterval( this.effect , 500);
         },
         stop: function() {
-            $dashEl.stop(1,1); clearInterval(this.looping);
+            $dashEl.stop(1,1);
+            clearInterval(this.looping);
         }
-	};
+    };
 dash.loop();
 </script>
 
