@@ -63,7 +63,7 @@ var FreeDay = +new Date("Oct 14, 2015"),
                     passSec = Math.round( (ZeroDay + (+new Date - ZeroDay)) / 1000 ),
                     final = (FreeDay / 1000) - passSec;
                     console.log(diffSec);
-                    $timer.html(' ' + diffSec);
+                    $timer.html(' ' + Math.round(diffSec/(60*60*24)) + ' 天' );
             }
         },
         loop: function() {
