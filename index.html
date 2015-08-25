@@ -13,19 +13,13 @@ body {
  	background-size: cover;
 }
 .title {
-    position:absolute;
     z-index: 100;
     color: white;
 }
 .title-timer {
-	position:absolute;
     z-index: 100;
 	color: white;
-    top: 8%;
     font-size: 100px;
-}
-.timer {
-
 }
 #illustrator {
     color: white;
@@ -41,13 +35,19 @@ body {
     background-color: rgba(0, 0, 0, 0.44);
     width: 98.6%;
 }
-
+@media screen and (max-width: 480px) {
+    .title-timer {
+        margin-top: 10%;
+        font-size: 170px;
+    }
+}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
+
 <div><h1 class='title'>> SMS_142T.js<span class='dash'>_</h1></div>
-<div><h1 class='title-timer'></span><span class='timer'></span></h1></div>
+<div><h1 class='title-timer text-center'></span><span class='timer'></span></h1></div>
 <div id="illustrator" class='backboard'>Illustration by <a href='https://twitter.com/ba_e_c'>@Ba_e_c</a></div>
 <script>
 var FreeDay = +new Date("Oct 14, 2015"),
