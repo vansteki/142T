@@ -43,6 +43,7 @@ body {
 }
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body style="background-color: rgb(18, 27, 34);">
 <div><h1 class='title'>> SMS_142T.js<span class='dash'>_</h1></div>
@@ -73,7 +74,7 @@ var FreeDay = +new Date("Oct 14, 2015"),
     };
 	time.loop();
 
-var $dashEl = document.querySelector('.dash'),
+var $dashEl = $('.dash'),
     dash = {
         looping: 0,
         effect : function() {
@@ -87,7 +88,7 @@ var $dashEl = document.querySelector('.dash'),
             clearInterval(this.looping);
         }
     };
-// dash.loop();
+dash.loop();
 </script>
 
 </body>
