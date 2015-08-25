@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset=utf-8/>
 <title>0w0</title>
 <style>
@@ -21,6 +22,7 @@ body {
     z-index: 100;
 	color: white;
     top: 8%;
+    font-size: 100px;
 }
 .timer {
 
@@ -42,19 +44,15 @@ body {
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js" async></script>
-<script src="https://jashkenas.github.io/underscore/underscore-min.js" async></script>
-<script src="https://jashkenas.github.io/backbone/backbone-min.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.10.6/vue.min.js" async></script>
 </head>
 <body>
-<div><h1 class='title'>> SMS_142T.js</h1></div>
-<div><h1 class='title-timer'>><span class='dash'> _</span><span class='timer'></span></h1></div>
+<div><h1 class='title'>> SMS_142T.js<span class='dash'>_</h1></div>
+<div><h1 class='title-timer'></span><span class='timer'></span></h1></div>
 <div id="illustrator" class='backboard'>Illustration by <a href='https://twitter.com/ba_e_c'>@Ba_e_c</a></div>
 <script>
 var FreeDay = +new Date("Oct 14, 2015"),
     ZeroDay = +new Date("Oct 30, 2014"),
-    $timer = $('.timer'),
+    $timer = document.querySelector('.timer'),
     time = {
         looping: 0,
         effect : function() {
@@ -62,8 +60,8 @@ var FreeDay = +new Date("Oct 14, 2015"),
                 var diffSec = Math.round( (FreeDay - (+new Date)) / 1000 ),
                     passSec = Math.round( (ZeroDay + (+new Date - ZeroDay)) / 1000 ),
                     final = (FreeDay / 1000) - passSec;
-                    console.log(diffSec);
-                    $timer.html(' ' + Math.round(diffSec/(60*60*24)) + ' 天' );
+                    // console.log(diffSec);
+                    $timer.textContent = ' ' + Math.round(diffSec/(60*60*24)) + ' 天';
             }
         },
         loop: function() {
@@ -76,7 +74,7 @@ var FreeDay = +new Date("Oct 14, 2015"),
     };
 	time.loop();
 
-var $dashEl = $('.dash'),
+var $dashEl = document.querySelector('.dash'),
     dash = {
         looping: 0,
         effect : function() {
@@ -90,7 +88,7 @@ var $dashEl = $('.dash'),
             clearInterval(this.looping);
         }
     };
-dash.loop();
+// dash.loop();
 </script>
 
 </body>
