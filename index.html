@@ -21,6 +21,9 @@ body {
 	color: white;
     font-size: 100px;
 }
+.title-seconds {
+    color: white;
+}
 #illustrator {
     color: white;
     text-decoration: none;
@@ -46,13 +49,15 @@ body {
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body style="background-color: rgb(18, 27, 34);">
-<div><h1 class='title'>> SMS_142T.js<span class='dash'>_</h1></div>
-<div><h1 class='title-timer text-center'></span><span class='timer'></span></h1></div>
+<div><h1 class='title'>> SMS_142T.js<span class='dash'>_</span></h1></div>
+<div><h1 class='title-timer text-center'><span class='timer'></span></h1></div>
+<div><h1 class='title-seconds text-center'><span class='seconds'>10101010</span></h1></div>
 <div id="illustrator" class='backboard'>Illustration by <a href='https://twitter.com/ba_e_c'>@Ba_e_c</a></div>
 <script>
 var FreeDay = +new Date("Oct 14, 2015"),
     ZeroDay = +new Date("Oct 30, 2014"),
     $timer = document.querySelector('.timer'),
+    $seconds = document.querySelector('.seconds');
     time = {
         looping: 0,
         effect : function() {
@@ -62,6 +67,7 @@ var FreeDay = +new Date("Oct 14, 2015"),
                     final = (FreeDay / 1000) - passSec;
                     // console.log(diffSec);
                     $timer.textContent = ' ' + Math.round(diffSec/(60*60*24)) + ' 天';
+                    $seconds.textContent = diffSec;
             }
         },
         loop: function() {
